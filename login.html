@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="public/css/styles.css">
+        <link rel="stylesheet" href="public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="public/css/stylesLogin.css">
+        <link rel="shortcut icon" href="public/images/Logo.png" type="image/x-icon">
+        <title>AppGrow</title>
+    </head>
+<body>
+    <header>
+        <nav>
+          <div class="nav-contenedor">
+            <div class="logo">
+              <a href="index.html" style="text-decoration: none; color: black !important;"><img src="public/images/Logo.png" alt="" srcset="" height="150px"><b style="color: #2ACC32;">APP</b><b>GROW</b></a>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <br>
+    <section class="forms-section">
+        <div class="forms">
+          <div class="form-wrapper is-active">
+            <button type="button" class="switcher switcher-login">
+              Login
+              <span class="underline"></span>
+            </button>
+            <form class="form form-login" method="post" action="includes/login.php">
+              <fieldset>
+                <div class="input-block">
+                  <label for="login-email">Correo</label>
+                  <input id="login-email" type="text" name="correo" required>
+                </div>
+                <div class="input-block">
+                  <label for="login-password">Contraseña</label>
+                  <input id="login-password" type="password" name="contra" required>
+                </div>
+              </fieldset>
+              <button type="submit" class="btn-login" name="login">Login</button>
+            </form>
+          </div>
+          <div class="form-wrapper">
+            <button type="button" class="switcher switcher-signup">
+              Registrar
+              <span class="underline"></span>
+            </button>
+            <form class="form form-signup" method="post" action="includes/registro.php">
+              <fieldset>
+                <div class="input-block">
+                  <label for="signup-email">Correo</label>
+                  <input id="signup-email" type="text" name="correo" required>
+                </div>
+                <div class="input-block">
+                  <label for="signup-password">Contraseña</label>
+                  <input id="signup-password" type="password" name="contra" required>
+                </div>
+                <div class="input-block">
+                  <label for="signup-password-confirm">Codigo Sensor</label>
+                  <input id="signup-password-confirm" type="text" name="codigo" required>
+                </div>
+              </fieldset>
+              <button type="submit" class="btn-signup" name="registro" id="registro">Continuar</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <script>
+        const switchers = [...document.querySelectorAll('.switcher')]
+
+switchers.forEach(item => {
+	item.addEventListener('click', function() {
+		switchers.forEach(item => item.parentElement.classList.remove('is-active'))
+		this.parentElement.classList.add('is-active')
+	})
+})
+
+      </script>
+</body>
+</html>
